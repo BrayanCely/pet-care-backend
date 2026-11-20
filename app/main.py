@@ -27,7 +27,11 @@ app = FastAPI(
 # Configuración de CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # En producción, reemplaza "*" por el dominio de tu frontend
+    allow_origins=[
+        "http://68.211.178.234",      # Tu Frontend en Azure
+        "http://68.211.178.234:80",   # Por si acaso
+        "http://localhost:4200"       # Para cuando programes en local
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
